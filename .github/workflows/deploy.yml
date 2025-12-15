@@ -39,14 +39,18 @@ jobs:
         run: pip install -r requirements.txt
 
       # 执行项目根目录的 update.py
-      - name: 🛠️ 执行 update.py
+      - name: 🛠️ 更新资料表以及正常贡献者
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python update.py
 
-      # 执行项目根目录的 addContributors.py
-      - name: 👥 执行 addContributors.py
-        run: python addContributors.py
+      # 执行项目根目录的 addContributors.py（细分到每一个科目） 、allContributors.py（“介绍”页面中显示）
+      - name: 👥 添加非Github贡献者
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python addContributors.py
+          python allContributors.py
 
       # 安装 Node 依赖
       - name: 📦 安装 Node 依赖
