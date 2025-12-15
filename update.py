@@ -231,7 +231,7 @@ def process_root_readme():
             print("❌ 本地根 README.md 不存在")
             return False
 
-    contributors = get_contributors("")
+    contributors = get_contributors("README.md")
 
     write_markdown(
         filename=filename,

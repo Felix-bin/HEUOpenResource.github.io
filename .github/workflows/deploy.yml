@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - update.py
       - contributors.json
       - docs/.vuepress/*.ts
   workflow_dispatch:
