@@ -13,7 +13,7 @@ import { webpackBundler } from '@vuepress/bundler-webpack'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 import path from 'path'
-
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
 
 export default defineUserConfig({
   base: '/',
@@ -34,7 +34,11 @@ export default defineUserConfig({
       },
     ],
   ],
-
+  plugins: [
+    googleAnalyticsPlugin({
+      id: 'G-0K3DDDQNDN',
+    }),
+  ],
   bundler: webpackBundler({
     configureWebpack: () => {
       const NODE_ENV = process.env.NODE_ENV
