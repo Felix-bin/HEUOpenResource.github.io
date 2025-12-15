@@ -59,7 +59,7 @@
     
     // 路由切换后重新加载
     watch(
-      () => route.fullPath,
+      () => route.path,
       async () => {
         loaded.value = false
         await nextTick()        // 等 DOM 更新完成
